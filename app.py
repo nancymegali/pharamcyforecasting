@@ -65,41 +65,30 @@ st.markdown("""
     }
 
 
-    /* Medication dropdown */
-    div[data-testid="stSelectbox"] label {
-        color: #45665F !important;
-        font-weight: 600 !important;
-        font-size: 14px !important;
+    /* Medication dropdown: outline the whole select box */
+    div[data-testid="stSelectbox"] [data-baseweb="select"] {
+        border: 2px solid #536C7C !important;
+        border-radius: 10px !important;
+        background-color: #FFFFFF !important;
+        overflow: hidden;
     }
 
-    div[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
-        background: #FFFFFF !important;
+    /* Remove the light-blue fill from the inner element */
+    div[data-testid="stSelectbox"] [data-baseweb="select"] > div {
         background-color: #FFFFFF !important;
-        border: 2px solid #7798C4 !important;
-        border-radius: 10px !important;
+        border: none !important;
         box-shadow: none !important;
     }
 
-    div[data-testid="stSelectbox"] div[data-baseweb="select"] span,
-    div[data-testid="stSelectbox"] div[data-baseweb="select"] input {
-        color: #203A39 !important;
-        -webkit-text-fill-color: #203A39 !important;
-    }
-
-    div[data-testid="stSelectbox"] div[data-baseweb="select"] svg {
-        fill: #526963 !important;
-        color: #526963 !important;
-    }
-
-    div[data-testid="stSelectbox"] div[data-baseweb="select"] [role="combobox"] {
-        background: #FFFFFF !important;
-        color: #203A39 !important;
-    }
-
-    /* Stronger outline when the dropdown is focused */
-    div[data-testid="stSelectbox"] div[data-baseweb="select"]:focus-within > div {
+    /* Keep the same outline when focused or open */
+    div[data-testid="stSelectbox"] [data-baseweb="select"]:focus-within {
         border: 2px solid #536C7C !important;
-        box-shadow: 0 0 0 2px rgba(83, 108, 124, 0.15) !important;
+        box-shadow: none !important;
+    }
+
+    /* Dropdown text */
+    div[data-testid="stSelectbox"] [data-baseweb="select"] span {
+        color: #203A39 !important;
     }
 
 
@@ -171,7 +160,7 @@ st.markdown("""
 
     .dashboard-header .eyebrow {
         color: #7798C4;
-        font-size: 11px;
+        font-size: 14px;
         font-weight: 700;
         letter-spacing: 1.8px;
         margin-bottom: 12px;

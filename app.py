@@ -19,8 +19,8 @@ st.markdown("""
 <style>
     /* Page */
     .stApp {
-        background: #FFFFFF;
-        color: #243B53;
+        background: #F3F6F5;
+        color: #203A39;
     }
 
     .block-container {
@@ -30,7 +30,7 @@ st.markdown("""
 
     /* Header */
     h1 {
-        color: #163A5F !important;
+        color: #203A39 !important;
         font-size: 2.25rem !important;
         font-weight: 700 !important;
         letter-spacing: -0.8px;
@@ -38,13 +38,13 @@ st.markdown("""
     }
 
     h2, h3 {
-        color: #163A5F !important;
+        color: #203A39 !important;
         font-weight: 600 !important;
         letter-spacing: -0.3px;
     }
 
     [data-testid="stCaptionContainer"] {
-        color: #64788B !important;
+        color: #647773 !important;
         font-size: 0.95rem;
     }
 
@@ -59,7 +59,7 @@ st.markdown("""
         visibility: visible !important;
         height: 1px !important;
         border: none !important;
-        background-color: #DCE7F3 !important;
+        background-color: #DDE7E2 !important;
         margin: 24px 0 28px 0 !important;
         opacity: 1 !important;
     }
@@ -67,44 +67,57 @@ st.markdown("""
 
     /* Medication dropdown */
     div[data-testid="stSelectbox"] label {
-    color: #34516D !important;
+    color: #45665F !important;
     font-weight: 600 !important;
     font-size: 14px !important;
     }
 
     div[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
-    background-color: #F0F6FF !important;
-    border: 1px solid #C9DDF5 !important;
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    border: 1px solid #D7E3DE !important;
     border-radius: 10px !important;
     box-shadow: none !important;
     }
 
-    div[data-testid="stSelectbox"] div[data-baseweb="select"] span {
-    color: #173B63 !important;
+    div[data-testid="stSelectbox"] div[data-baseweb="select"] span,
+    div[data-testid="stSelectbox"] div[data-baseweb="select"] input {
+    color: #203A39 !important;
+    -webkit-text-fill-color: #203A39 !important;
     }
 
     div[data-testid="stSelectbox"] div[data-baseweb="select"] svg {
-    fill: #3478F6 !important;
-    color: #3478F6 !important;
+    fill: #7798C4 !important;
+    color: #7798C4 !important;
+    }
+
+    div[data-testid="stSelectbox"] div[data-baseweb="select"] [role="combobox"] {
+    background: #FFFFFF !important;
+    color: #203A39 !important;
+    }
+
+    div[data-testid="stSelectbox"] div[data-baseweb="select"] svg {
+    fill: #7798C4 !important;
+    color: #7798C4 !important;
     }
 
 
     /* Compact metric cards */
     [data-testid="stMetric"] {
         background: #FFFFFF;
-        border: 1px solid #E1EAF3;
+        border: 1px solid #DDE7E2;
         border-radius: 12px;
         padding: 16px 18px;
-        box-shadow: 0 2px 8px rgba(22, 58, 95, 0.035);
+        box-shadow: 0 3px 12px rgba(32, 58, 57, 0.045);
     }
 
     [data-testid="stMetricLabel"] {
-        color: #627D98 !important;
+        color: #647773 !important;
         font-size: 0.88rem !important;
     }
 
     [data-testid="stMetricValue"] {
-        color: #163A5F !important;
+        color: #203A39 !important;
         font-size: 1.8rem !important;
         font-weight: 650 !important;
     }
@@ -112,41 +125,51 @@ st.markdown("""
     /* Chart containers */
     [data-testid="stPlotlyChart"] {
         background: #FFFFFF;
-        border: 1px solid #E5ECF3;
+        border: 1px solid #DFE8E3;
         border-radius: 12px;
         padding: 6px;
     }
-
-    /* Tables */
+    
+    /* Forecast table styling */
     [data-testid="stDataFrame"] {
-        border: 1px solid #E1EAF3;
+        border: 1px solid #B8C9C1;
         border-radius: 10px;
     }
 
+    [data-testid="stDataFrame"] *:focus {
+        outline-color: #3478F6 !important;
+    }
+
+    [data-testid="stDataFrame"] [aria-selected="true"] {
+        outline-color: #3478F6 !important;
+        border-color: #3478F6 !important;
+    }
+
+
     /* Buttons and links */
     .stButton button {
-        background: #2563EB;
+        background: #557F78;
         color: #FFFFFF;
         border: none;
         border-radius: 8px;
     }
 
     .stButton button:hover {
-        background: #1D4ED8;
+        background: #456B64;
         color: #FFFFFF;
         border: none;
     }
 
     /* Hide the decorative top header background */
     [data-testid="stHeader"] {
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(243, 246, 245, 0.94);
     }
     .dashboard-header {
         padding: 8px 0 18px;
     }
 
     .dashboard-header .eyebrow {
-        color: #3478F6;
+        color: #7798C4;
         font-size: 11px;
         font-weight: 700;
         letter-spacing: 1.8px;
@@ -154,7 +177,7 @@ st.markdown("""
     }
 
     .dashboard-header h1 {
-        color: #173B63 !important;
+        color: #203A39 !important;
         font-size: 36px !important;
         line-height: 1.2 !important;
         letter-spacing: -1.1px;
@@ -162,7 +185,7 @@ st.markdown("""
     }
 
     .dashboard-header p {
-        color: #6B7F93;
+        color: #647773;
         font-size: 16px;
         margin: 0;
         line-height: 1.6;
@@ -278,17 +301,40 @@ history_chart = px.line(
 
 history_chart.update_layout(
     title=None,
+    template="plotly_white",
+    paper_bgcolor="#FFFFFF",
+    plot_bgcolor="#FFFFFF",
+    font=dict(color="#647773", size=12),
     margin=dict(l=10, r=10, t=10, b=10),
-    xaxis=dict(showgrid=False, title=None),
+    xaxis=dict(
+        showgrid=False,
+        title=None,
+        color="#526963",
+        tickfont=dict(color="#526963", size=12),
+        linecolor="#C5D6CF",
+        linewidth=1,
+        showline=True,
+    ),
     yaxis=dict(
         showgrid=True,
-        gridcolor="#E8EEF5",
-        title=None
+        gridcolor="#E4ECE8",
+        title=None,
+        color="#526963",
+        tickfont=dict(color="#526963", size=12),
+        linecolor="#C5D6CF",
+        linewidth=1,
+        zerolinecolor="#D8E5DF",
     )
 )
 
 history_chart.update_traces(
-    line=dict(color="#3478F6", width=1.8)
+    name="Historical Demand",
+    line=dict(color="#7798C4", width=3.5),
+    hovertemplate=(
+        "Date: %{x|%b %d, %Y}<br>"
+        "Historical Demand: %{y:.1f} units"
+        "<extra></extra>"
+    )
 )
 
 st.plotly_chart(
@@ -296,6 +342,7 @@ st.plotly_chart(
     use_container_width=True,
     config={"displayModeBar": False}
 )
+
 
 # Forecast chart
 st.subheader("30-Day Forecast")
@@ -316,55 +363,144 @@ elif "predicted_demand" not in med_forecast.columns:
         "The forecast CSV does not contain a predicted_demand column."
     )
 else:
+    # Most recent 30 days of historical demand
+    recent_history = med_history.tail(30).copy()
+
+    # Start the chart with historical demand in sage green
     forecast_chart = px.line(
-        med_forecast,
+        recent_history,
         x="date",
-        y="predicted_demand",
-        markers=True,
+        y="demand",
         labels={
-        "date": "Date",
-        "predicted_demand": "Predicted units"
+            "date": "Date",
+            "demand": "Units",
         },
-        template="plotly_white"
+        template="plotly_white",
     )
 
+    # Historical series: bold sage green
     forecast_chart.update_traces(
-        line=dict(color="#3478F6", width=2.5),
-        marker=dict(size=5, color="#3478F6")
+        name="Historical",
+        line=dict(color="#7798C4", width=3.5),
+        mode="lines+markers",
+        marker=dict(size=6, color="#7798C4"),
+        showlegend=True,
+        hovertemplate=(
+            "Date: %{x|%b %d, %Y}<br>"
+            "Historical: %{y:.1f} units"
+            "<extra></extra>"
+        ),
     )
 
+    # Forecast series: bold dusty blue with markers
+    forecast_chart.add_scatter(
+        x=med_forecast["date"],
+        y=med_forecast["predicted_demand"],
+        mode="lines+markers",
+        name="Predicted",
+        showlegend=True,
+        line=dict(color="#719A8C", width=3.5),
+        marker=dict(size=6, color="#719A8C"),
+        hovertemplate=(
+            "Date: %{x|%b %d, %Y}<br>"
+            "Predicted: %{y:.1f} units"
+            "<extra></extra>"
+        ),
+    )
+
+    # Chart styling and visible legend
     forecast_chart.update_layout(
         title=None,
+        template="plotly_white",
         paper_bgcolor="#FFFFFF",
         plot_bgcolor="#FFFFFF",
-        font=dict(color="#52677D", size=12),
-        margin=dict(l=10, r=10, t=10, b=10),
-        xaxis=dict(showgrid=False, title=None),
+        font=dict(color="#647773", size=12),
+        margin=dict(l=10, r=10, t=10, b=55),
+        xaxis=dict(
+            showgrid=False,
+            title=None,
+            color="#526963",
+            tickfont=dict(color="#526963", size=12),
+            linecolor="#C5D6CF",
+            linewidth=1,
+            showline=True,
+        ),
         yaxis=dict(
             showgrid=True,
-            gridcolor="#E8EEF5",
-            title=None
+            gridcolor="#E4ECE8",
+            title=dict(
+                text="Units",
+                font=dict(color="#526963", size=14)
+            ),
+            tickfont=dict(color="#526963", size=12),
+            linecolor="#C5D6CF",
+            linewidth=1,
+            zerolinecolor="#D8E5DF",
         ),
-        hovermode="x unified"
+        hovermode="x unified",
+        legend=dict(
+            title=None,
+            orientation="h",
+            yanchor="top",
+            y=-0.16,
+            xanchor="left",
+            x=0,
+            font=dict(color="#647773", size=13),
+            bgcolor="rgba(255,255,255,0)",
+        ),
     )
 
     st.plotly_chart(
         forecast_chart,
         use_container_width=True,
-        config={"displayModeBar": False}
+        config={"displayModeBar": False},
     )
+
+
     
 
 
+    
+    
+    # Forecast table
+    forecast_table = med_forecast[["date", "predicted_demand"]].rename(
+        columns={
+            "date": "Date",
+            "predicted_demand": "Predicted Daily Demand"
+        }
+    ).copy()
+
+    forecast_table["Date"] = forecast_table["Date"].dt.strftime("%b %d, %Y")
+
     st.dataframe(
-        med_forecast[["date", "predicted_demand"]].rename(
-            columns={
-                "date": "Date",
-                "predicted_demand": "Predicted Daily Demand"
+        forecast_table.style
+        .format({"Predicted Daily Demand": "{:.1f}"})
+        .set_properties(**{
+            "background-color": "#FFFFFF",
+            "color": "#203A39",
+            "font-weight": "600",
+            "border": "1px solid #B8C9C1"
+        })
+        .set_table_styles([
+            {
+                "selector": "th",
+                "props": [
+                    ("background-color", "#FFFFFF"),
+                    ("color", "#203A39"),
+                    ("font-weight", "bold"),
+                    ("border", "1px solid #A9BDB3"),
+                ]
+            },
+            {
+                "selector": "td",
+                "props": [
+                    ("border", "1px solid #B8C9C1"),
+                ]
             }
-        ),
+        ]),
         use_container_width=True,
-        hide_index=True
+        hide_index=True,
+        height=420
     )
 
     st.metric(

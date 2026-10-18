@@ -1,0 +1,21 @@
+med_id,med_name,drug_class,base_daily_demand
+1,Amoxicillin 500mg,Antibiotic,22
+2,Azithromycin 250mg,Antibiotic,18
+3,Lisinopril 10mg,Antihypertensive,16
+4,Amlodipine 5mg,Antihypertensive,14
+5,Metformin 500mg,Antidiabetic,20
+6,Atorvastatin 20mg,Statin,17
+7,Sertraline 50mg,SSRI,13
+8,Albuterol Inhaler,Asthma Inhaler,15
+9,Fluticasone Nasal Spray,Allergy,12
+10,Cetirizine 10mg,Allergy,19
+11,Montelukast 10mg,Asthma/Allergy,11
+12,Omeprazole 20mg,PPI,13
+13,Ibuprofen 600mg,Pain Reliever,21
+14,Hydrochlorothiazide 25mg,Diuretic,10
+15,Levothyroxine 50mcg,Thyroid,9
+16,Amphetamine-Dextroamphetamine 20mg,ADHD,8
+17,Methylphenidate ER 36mg,ADHD,7
+18,Insulin Glargine,Insulin,6
+19,Prednisone 10mg,Steroid Burst,5
+20,Oseltamivir 75mg,Antiviral,4

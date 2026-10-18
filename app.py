@@ -67,38 +67,39 @@ st.markdown("""
 
     /* Medication dropdown */
     div[data-testid="stSelectbox"] label {
-    color: #45665F !important;
-    font-weight: 600 !important;
-    font-size: 14px !important;
+        color: #45665F !important;
+        font-weight: 600 !important;
+        font-size: 14px !important;
     }
 
     div[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
-    background: #FFFFFF !important;
-    background-color: #FFFFFF !important;
-    border: 1px solid #D7E3DE !important;
-    border-radius: 10px !important;
-    box-shadow: none !important;
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        border: 2px solid #7798C4 !important;
+        border-radius: 10px !important;
+        box-shadow: none !important;
     }
 
     div[data-testid="stSelectbox"] div[data-baseweb="select"] span,
     div[data-testid="stSelectbox"] div[data-baseweb="select"] input {
-    color: #203A39 !important;
-    -webkit-text-fill-color: #203A39 !important;
+        color: #203A39 !important;
+        -webkit-text-fill-color: #203A39 !important;
     }
 
     div[data-testid="stSelectbox"] div[data-baseweb="select"] svg {
-    fill: #7798C4 !important;
-    color: #7798C4 !important;
+        fill: #526963 !important;
+        color: #526963 !important;
     }
 
     div[data-testid="stSelectbox"] div[data-baseweb="select"] [role="combobox"] {
-    background: #FFFFFF !important;
-    color: #203A39 !important;
+        background: #FFFFFF !important;
+        color: #203A39 !important;
     }
 
-    div[data-testid="stSelectbox"] div[data-baseweb="select"] svg {
-    fill: #7798C4 !important;
-    color: #7798C4 !important;
+    /* Stronger outline when the dropdown is focused */
+    div[data-testid="stSelectbox"] div[data-baseweb="select"]:focus-within > div {
+        border: 2px solid #536C7C !important;
+        box-shadow: 0 0 0 2px rgba(83, 108, 124, 0.15) !important;
     }
 
 
